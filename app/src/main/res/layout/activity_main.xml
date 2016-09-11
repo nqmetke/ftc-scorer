@@ -21,7 +21,7 @@
             android:id="@+id/aboutBtn"
             android:src="@drawable/ic_i2r"
             android:padding="15dp"
-            android:layout_gravity="right"
+            android:layout_gravity="end"
             android:background="@null"
         />
         <ImageButton
@@ -59,7 +59,7 @@
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:layout_gravity="bottom|end"
-        android:src="@android:drawable/ic_lock_idle_alarm"
+        android:src="@drawable/ic_action_alarm"
         android:fitsSystemWindows="true"
         android:layout_margin="16dp"
         android:layout_alignBottom="@+id/view"
@@ -79,7 +79,8 @@
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_alignTop="@+id/view">
+        android:layout_alignTop="@+id/view"
+        >
     <TableLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -216,10 +217,73 @@
             android:background="#43A047"
             android:elevation="2dp">
 
+            <TextView
+                android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:textSize="13dp"
+                android:text="Center Vortex Goals"
+                android:layout_span="3"
+                android:gravity="center_horizontal"
+
+                android:padding="18dip"
+                android:textColor="#FFFFFF"/>
+
+        </TableRow>
+        <TableRow
+            android:layout_height="wrap_content"
+            android:layout_width="fill_parent"
+            android:gravity="center_horizontal"
+            android:background="#43A047"
+            android:elevation="2dp">
+
             <ImageButton
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/subParticleAuto"
+                android:id="@+id/subParticleAutoCenter"
+                android:src="@drawable/ic_action_minus" />
+            <TextView
+                android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:textSize="15dp"
+                android:text="0"
+                android:gravity="center_horizontal"
+                android:padding="18dip"
+                android:textColor="#FFFFFF"
+                android:id="@+id/textCenterVal"/>
+
+            <ImageButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/addSubAutoCenter"
+                android:src="@drawable/ic_action_add" />
+        </TableRow>
+        <TableRow
+            android:layout_height="wrap_content"
+            android:layout_width="fill_parent"
+            android:gravity="center_horizontal"
+            android:background="#43A047"
+            android:elevation="2dp">
+
+            <TextView
+                android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:textSize="13dp"
+                android:text="Side Vortex Goal"
+                android:layout_span="3"
+                android:gravity="center_horizontal"
+
+                android:padding="18dip"
+                android:textColor="#FFFFFF"/>
+
+        </TableRow>
+        <TableRow
+            android:layout_height="wrap_content"
+            android:layout_width="fill_parent"
+            android:gravity="center_horizontal"
+            android:background="#43A047"
+            android:elevation="2dp">
+
+            <ImageButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/subParticleAutoVortex"
                 android:src="@drawable/ic_action_minus" />
             <TextView
                 android:layout_width="match_parent" android:layout_height="wrap_content"
@@ -232,7 +296,7 @@
             <ImageButton
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/addSubAuto"
+                android:id="@+id/addSubAutoVortex"
                 android:src="@drawable/ic_action_add" />
         </TableRow>
         <TableRow
