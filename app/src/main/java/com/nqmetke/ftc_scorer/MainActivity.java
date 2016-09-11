@@ -28,7 +28,10 @@ public class MainActivity extends AppCompatActivity {
     private ToggleButton beacon2;
     private ToggleButton beacon3;
     private TextView scoreText;
+    private ImageButton aboutBtn;
+
     private int scoreTotal = 0;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
@@ -44,17 +47,28 @@ public class MainActivity extends AppCompatActivity {
         beacon2 = (ToggleButton)findViewById(R.id.beacon_2);
         beacon3 = (ToggleButton)findViewById(R.id.beacon_3);
         scoreText=(TextView)findViewById(R.id.scoreText);
+        aboutBtn = (ImageButton)findViewById(R.id.aboutBtn);
+
+
+        aboutBtn.setOnClickListener(new View.OnClickListener(){
+
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(getApplicationContext(), AboutActivity.class);
+                startActivity(i);
+            }
+        });
 
         beacon1.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 if (isChecked) {
                     beacon2.setChecked(false);
                     beacon3.setChecked(false);
-                    scoreTotal += 10;
+                    scoreTotal += 0;
                     scoreText.setText(""+scoreTotal);
                 }
                 else{
-                    scoreTotal -= 10;
+                    scoreTotal -= 0;
                     scoreText.setText(""+scoreTotal);
                 }
             }
@@ -63,21 +77,6 @@ public class MainActivity extends AppCompatActivity {
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 if (isChecked) {
                     beacon1.setChecked(false);
-                    beacon3.setChecked(false);
-                    scoreTotal += 20;
-                    scoreText.setText(""+scoreTotal);
-                }
-                else{
-                    scoreTotal -= 20;
-                    scoreText.setText(""+scoreTotal);
-                }
-            }
-        });
-        beacon3.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                if (isChecked) {
-                    beacon1.setChecked(false);
-                    beacon2.setChecked(false);
                     scoreTotal += 30;
                     scoreText.setText(""+scoreTotal);
                 }
@@ -87,13 +86,26 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
         });
-
+        beacon3.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if (isChecked) {
+                    beacon1.setChecked(false);
+                    scoreTotal += 30;
+                    scoreText.setText(""+scoreTotal);
+                }
+                else{
+                    scoreTotal -= 30;
+                    scoreText.setText(""+scoreTotal);
+                }
+            }
+        });
         timerFab.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view) {
                 startTimer(150000);
             }
         });
+
     }
     void startTimer(int time){
         System.out.println("Test");
