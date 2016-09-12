@@ -34,6 +34,12 @@
             android:background="@null"
             />
         </android.support.v7.widget.Toolbar>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:elevation="10dp"
+        android:layout_above="@+id/view"
+        android:id="@+id/view2" />
     <android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:app="http://schemas.android.com/apk/res-auto"
         android:layout_width="match_parent"
@@ -54,7 +60,10 @@
 
 
 
-    <android.support.design.widget.FloatingActionButton
+
+
+
+   <!-- <android.support.design.widget.FloatingActionButton
         android:id="@+id/timerFab"
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
@@ -63,7 +72,7 @@
         android:fitsSystemWindows="true"
         android:layout_margin="16dp"
         android:layout_alignBottom="@+id/view"
-        android:layout_alignEnd="@+id/view" />
+        android:layout_alignEnd="@+id/view" />-->
 
     <TextView
         android:layout_width="wrap_content"
@@ -76,6 +85,7 @@
         android:layout_marginTop="33dp"
         android:layout_marginBottom="33dp"
         android:textSize="30dp"/>
+
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -98,7 +108,7 @@
                 android:layout_width="match_parent" android:layout_height="wrap_content"
                 android:textSize="25dp"
                 android:text="Autonomous"
-                android:layout_span="3"
+
                 android:gravity="center_horizontal"
                 android:background="#1B5E20"
                 android:padding="18dip"
@@ -115,8 +125,8 @@
             <TextView
                 android:layout_width="match_parent" android:layout_height="wrap_content"
                 android:textSize="18dp"
-                android:text="Beacon Pressed"
-                android:layout_span="3"
+                android:text="Number of Beacons"
+
                 android:gravity="center_horizontal"
 
                 android:padding="18dip"
@@ -137,8 +147,9 @@
                 android:layout_height="wrap_content"
                 android:text="New ToggleButton"
                 android:id="@+id/beacon_1"
-                android:textOff="None"
-                android:textOn="None" />
+                android:textOff="0"
+                android:textOn="0"
+                />
 
             <ToggleButton
                 android:layout_width="wrap_content"
@@ -146,13 +157,15 @@
                 android:text="New ToggleButton"
                 android:id="@+id/beacon_2"
                 android:textOff="1"
-                android:textOn="1" />
+                android:textOn="1"
+                />
 
             <ToggleButton
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="New ToggleButton"
                 android:id="@+id/beacon_3"
+
                 android:layout_marginBottom="10dp"
                 android:textOff="2"
                 android:textOn="2" />
@@ -167,7 +180,7 @@
                 android:layout_width="match_parent" android:layout_height="wrap_content"
                 android:textSize="18dp"
                 android:text="Cap Ball on Floor"
-                android:layout_span="3"
+
                 android:gravity="center_horizontal"
 
                 android:padding="18dip"
@@ -189,7 +202,8 @@
             android:text="New ToggleButton"
             android:id="@+id/cap_ball"
             android:textOff="False"
-            android:textOn="True" />
+            android:textOn="True"
+            />
         </TableRow>
 
         <TableRow
@@ -203,7 +217,7 @@
                 android:layout_width="match_parent" android:layout_height="wrap_content"
                 android:textSize="18dp"
                 android:text="Particles Scored"
-                android:layout_span="3"
+
                 android:gravity="center_horizontal"
 
                 android:padding="18dip"
@@ -221,7 +235,7 @@
                 android:layout_width="match_parent" android:layout_height="wrap_content"
                 android:textSize="13dp"
                 android:text="Center Vortex Goals"
-                android:layout_span="3"
+
                 android:gravity="center_horizontal"
 
                 android:padding="18dip"
@@ -266,7 +280,7 @@
                 android:layout_width="match_parent" android:layout_height="wrap_content"
                 android:textSize="13dp"
                 android:text="Side Vortex Goal"
-                android:layout_span="3"
+
                 android:gravity="center_horizontal"
 
                 android:padding="18dip"
@@ -291,6 +305,7 @@
                 android:text="0"
                 android:gravity="center_horizontal"
                 android:padding="18dip"
+                android:id="@+id/textSideVal"
                 android:textColor="#FFFFFF"/>
 
             <ImageButton
@@ -320,6 +335,24 @@
             android:layout_height="wrap_content"
             android:layout_width="fill_parent"
             android:gravity="center_horizontal"
+            android:background="#43A047"
+            android:elevation="2dp">
+
+            <TextView
+                android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:textSize="13dp"
+                android:text="Center Vortex Base"
+                android:layout_span="3"
+                android:gravity="center_horizontal"
+
+                android:padding="18dip"
+                android:textColor="#FFFFFF"/>
+
+        </TableRow>
+        <TableRow
+            android:layout_height="wrap_content"
+            android:layout_width="fill_parent"
+            android:gravity="center_horizontal"
             android:background="#4CAF50"
             android:elevation="3dp">
 
@@ -328,7 +361,65 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="New ToggleButton"
-                android:id="@+id/park_none"
+                android:id="@+id/parkNoneAutoBase"
+                android:textOff="None"
+                android:textOn="None"
+                android:layout_span="1"
+
+            />
+
+            <ToggleButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="New ToggleButton"
+                android:id="@+id/parkPartialAutoBase"
+                android:textOff="Partial"
+                android:textOn="Partial"
+                android:layout_span="1"
+
+                />
+
+            <ToggleButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="New ToggleButton"
+                android:id="@+id/parkFullAutoBase"
+                android:layout_marginBottom="10dp"
+                android:textOff="Full"
+                android:textOn="Full"
+                android:layout_span="1"/>
+        </TableRow>
+        <TableRow
+            android:layout_height="wrap_content"
+            android:layout_width="fill_parent"
+            android:gravity="center_horizontal"
+            android:background="#43A047"
+            android:elevation="2dp">
+
+            <TextView
+                android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:textSize="13dp"
+                android:text="Center Vortex Base"
+
+                android:gravity="center_horizontal"
+
+                android:padding="18dip"
+                android:textColor="#FFFFFF"/>
+
+        </TableRow>
+        <TableRow
+            android:layout_height="wrap_content"
+            android:layout_width="fill_parent"
+            android:gravity="center_horizontal"
+            android:background="#4CAF50"
+            android:elevation="3dp">
+
+
+            <ToggleButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="New ToggleButton"
+                android:id="@+id/parkNoneAutoSide"
                 android:textOff="None"
                 android:textOn="None" />
 
@@ -336,7 +427,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="New ToggleButton"
-                android:id="@+id/park_partial"
+                android:id="@+id/parkPartialAutoSide"
                 android:textOff="Partial"
                 android:textOn="Partial" />
 
@@ -344,7 +435,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="New ToggleButton"
-                android:id="@+id/park_full"
+                android:id="@+id/parkFullAutoSide"
                 android:layout_marginBottom="10dp"
                 android:textOff="Full"
                 android:textOn="Full" />
@@ -360,11 +451,184 @@
                 android:layout_width="match_parent" android:layout_height="wrap_content"
                 android:textSize="25dp"
                 android:text="Tele-Op"
-                android:layout_span="3"
+
                 android:gravity="center_horizontal"
 
                 android:padding="18dip"
                 android:textColor="#FFFFFF"/>
+        </TableRow>
+        <TableRow
+            android:layout_height="wrap_content"
+            android:layout_width="fill_parent"
+            android:gravity="center_horizontal"
+            android:background="#1565C0"
+            android:elevation="2dp">
+
+            <TextView
+                android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:textSize="13dp"
+                android:text="Center Vortex Goals"
+
+                android:gravity="center_horizontal"
+
+                android:padding="18dip"
+                android:textColor="#FFFFFF"/>
+
+        </TableRow>
+        <TableRow
+            android:layout_height="wrap_content"
+            android:layout_width="fill_parent"
+            android:gravity="center_horizontal"
+            android:background="#1565C0"
+            android:elevation="2dp">
+
+            <ImageButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/subParticleTeleCenter"
+                android:src="@drawable/ic_action_minus" />
+            <TextView
+                android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:textSize="15dp"
+                android:text="0"
+                android:gravity="center_horizontal"
+                android:padding="18dip"
+                android:textColor="#FFFFFF"
+                android:id="@+id/textCenterValTele"/>
+
+            <ImageButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/addParticleTeleCenter"
+                android:src="@drawable/ic_action_add" />
+        </TableRow>
+        <TableRow
+            android:layout_height="wrap_content"
+            android:layout_width="fill_parent"
+            android:gravity="center_horizontal"
+            android:background="#1565C0"
+            android:elevation="2dp">
+
+            <TextView
+                android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:textSize="13dp"
+                android:text="Side Vortex Goal"
+
+                android:gravity="center_horizontal"
+
+                android:padding="18dip"
+                android:textColor="#FFFFFF"/>
+
+        </TableRow>
+        <TableRow
+            android:layout_height="wrap_content"
+            android:layout_width="fill_parent"
+            android:gravity="center_horizontal"
+            android:background="#1565C0"
+            android:elevation="2dp">
+
+            <ImageButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/subParticleTeleVortex"
+                android:src="@drawable/ic_action_minus"
+                />
+            <TextView
+                android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:textSize="15dp"
+                android:text="0"
+                android:gravity="center_horizontal"
+                android:padding="18dip"
+                android:id="@+id/textSideValTele"
+                android:textColor="#FFFFFF"
+                />
+
+            <ImageButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/addSubTeleVortex"
+                android:src="@drawable/ic_action_add"
+                />
+        </TableRow>
+        <TableRow
+            android:layout_height="wrap_content"
+            android:layout_width="fill_parent"
+            android:gravity="center_horizontal"
+            android:background="#1976D2">
+
+            <TextView
+                android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:textSize="18dp"
+                android:text="Number of Beacons"
+
+                android:gravity="center_horizontal"
+
+                android:padding="18dip"
+                android:textColor="#FFFFFF"/>
+
+        </TableRow>
+        <TableRow
+            android:layout_height="wrap_content"
+            android:layout_width="fill_parent"
+            android:gravity="center_horizontal"
+            android:background="#1976D2"
+            android:elevation="3dp">
+
+
+            <ToggleButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="0"
+                android:id="@+id/teleBeacon1"
+                android:textOff="0"
+                android:textOn="0"
+                android:checked="false"
+                />
+
+            <ToggleButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="New ToggleButton"
+                android:id="@+id/teleBeacon2"
+                android:textOff="1"
+                android:textOn="1"
+
+                />
+
+            <ToggleButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="New ToggleButton"
+                android:id="@+id/teleBeacon3"
+                android:layout_marginBottom="10dp"
+                android:textOff="2"
+                android:textOn="2"
+                />
+        </TableRow>
+        <TableRow
+            android:layout_height="wrap_content"
+            android:layout_width="fill_parent"
+            android:gravity="center_horizontal"
+            android:background="#1976D2"
+            android:elevation="3dp">
+            <ToggleButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="New ToggleButton"
+                android:id="@+id/teleBeacon4"
+                android:layout_marginBottom="10dp"
+                android:textOff="3"
+                android:textOn="3"
+                />
+            <ToggleButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/teleBeacon5"
+                android:text="New ToggleButton"
+                android:layout_marginBottom="10dp"
+                android:textOff="4"
+                android:textOn="4"
+                />
         </TableRow>
 
 
@@ -386,12 +650,65 @@
                 android:layout_width="match_parent" android:layout_height="wrap_content"
                 android:textSize="25dp"
                 android:text="End Game"
-                android:layout_span="3"
+
                 android:gravity="center_horizontal"
 
                 android:padding="18dip"
                 android:textColor="#FFFFFF"/>
         </TableRow>
+        <TableRow
+            android:layout_height="wrap_content"
+            android:layout_width="fill_parent"
+            android:gravity="center_horizontal"
+            android:background="#c62828"
+            android:elevation="3dp">
+
+
+            <ToggleButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="New ToggleButton"
+                android:id="@+id/endNone"
+                android:textOff="Not Lifted"
+                android:textOn="Not Lifted"
+                />
+            <ToggleButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="New ToggleButton"
+                android:id="@+id/endLow"
+                android:textOff="Low Height"
+                android:textOn="Low Height"
+                />
+        </TableRow>
+        <TableRow
+            android:layout_height="wrap_content"
+            android:layout_width="fill_parent"
+            android:gravity="center_horizontal"
+            android:background="#c62828"
+            android:elevation="3dp">
+
+            <ToggleButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="New ToggleButton"
+                android:id="@+id/endHigh"
+                android:textOff="High Height"
+                android:textOn="High Height"
+                />
+
+            <ToggleButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="New ToggleButton"
+                android:id="@+id/endCap"
+
+                android:layout_marginBottom="10dp"
+                android:textOff="Ball Capped"
+                android:textOn="Ball Capped" />
+        </TableRow>
+
+
 
 
     </TableLayout>
